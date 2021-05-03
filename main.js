@@ -6,11 +6,8 @@ var app = new Vue({
     albums: [],
     genres: [],
     artists: [],
-    selected: '',
+    selectedGenre: '',
     selectedArtist: '',
-    filter: 'sort',
-    albumsAscending: [],
-    albumsDescending: [],
     albumsByArtist: []
   },
   created() {
