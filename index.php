@@ -1,3 +1,7 @@
+<?php
+  include 'dati.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +19,10 @@
       <div>
         <h1>Music albums</h1>
         <select name="genre">
-          <option value="genre"></option>
+          <?php
+            for ($i=0; $i < count($genres); $i++) { ?>
+              <option value="<?= $genres[$i] ?>"><?= $genres[$i] ?></option>
+          <?php } ?>
         </select>
         <select name="sort">
           <option value="sort">Sort by</option>
@@ -27,22 +34,24 @@
 
     <main>
       <div id="albums">
-        <div class="card-container">
-          <div class="card">
-            <div class="cover" style="">
-            </div>
-            <div class="info">
-              <div class="album-info">
-                <h3></h3>
-                <h4 class="m-5"></h4>
-                <span class="m-5"></span>
-                <span></span>
+        <?php
+        for ($i=0; $i < count($albums); $i++) { ?>
+          <div class="card-container">
+            <div class="card">
+              <div class="cover" style="background-image:url('<?= $albums[$i]['poster'] ?>')">
+              </div>
+              <div class="info">
+                <div class="album-info">
+                  <h3><?= $albums[$i]['title'] ?></h3>
+                  <h4 class="m-5"><?= $albums[$i]['author'] ?></h4>
+                  <span class="m-5"><?= $albums[$i]['year'] ?></span>
+                  <span><?= $albums[$i]['genre'] ?></span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <?php } ?>
       </div>
     </main>
-
   </body>
 </html>

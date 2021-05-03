@@ -8,11 +8,6 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-#root {
-  min-height: 100vh;
-  background-color: #628A8E;
-}
-
 header > div {
   background-color: #176980;
   height: 80px;
@@ -40,6 +35,11 @@ header select {
   color: #176980;
   font-weight: bold;
   font-family: 'Quicksand', sans-serif;
+}
+
+main {
+  background-color: #628A8E;
+  min-height: 100vh;
 }
 
 #albums {
