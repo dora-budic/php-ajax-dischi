@@ -19,6 +19,7 @@
       <div>
         <h1>Music albums</h1>
         <select name="genre">
+          <option value="">All</option>
           <?php
             for ($i=0; $i < count($genres); $i++) { ?>
               <option value="<?= $genres[$i] ?>"><?= $genres[$i] ?></option>

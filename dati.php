@@ -72,5 +72,12 @@
     ],
   ];
 
-  $genres = ["All", "Rock", "Pop", "Jazz", "Metal"];
- ?>
+
+  $genres = [];
+  foreach ($albums as $value) {
+    if (!in_array($value['genre'],$genres)) {
+      $genres[] = $value['genre'];
+    }
+  }
+
+?>
