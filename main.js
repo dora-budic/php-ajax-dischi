@@ -11,7 +11,7 @@ var app = new Vue({
     albumsByArtist: []
   },
   created() {
-    axios.get('http://localhost/php-ajax-dischi/call_albums.php')
+    axios.get('http://localhost/Php/php-ajax-dischi/call_albums.php')
       .then((response) => {
         this.albums = response.data;
 
@@ -22,7 +22,7 @@ var app = new Vue({
         });
     });
 
-    axios.get('http://localhost/php-ajax-dischi/call_genres.php')
+    axios.get('http://localhost/Php/php-ajax-dischi/call_genres.php')
       .then((response) => {
         this.genres = response.data;
     });
@@ -33,7 +33,7 @@ var app = new Vue({
       if (this.selectedArtist == '') {
         return this.albums;
       } else {
-        axios.get(`http://localhost/php-ajax-dischi/call_artist.php/?artist=${this.selectedArtist}`)
+        axios.get(`http://localhost/Php/php-ajax-dischi/call_artist.php/?artist=${this.selectedArtist}`)
           .then((response) => {
             this.albumsByArtist = response.data;
           });
